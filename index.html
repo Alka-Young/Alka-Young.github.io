@@ -1,20 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Site d'Alka</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Template Noir & Jaune</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #f5c400;
+        }
+
+        header h1 {
+            color: #f5c400;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f5c400;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #111;
+            border: 1px solid #f5c400;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .card h2 {
+            color: #f5c400;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #f5c400;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #ffd84d;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 15px;
+            border-top: 2px solid #f5c400;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Bienvenue sur le site d'Alka</h1>
-  <p>Mon site GitHub Pages fonctionne </p>
+    <header>
+        <h1>Mon Site</h1>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Bienvenue</h2>
+            <p>
+                Ceci est un template HTML avec un thème noir, jaune et blanc.
+                Tu peux le personnaliser facilement.
+            </p>
+            <a href="#" class="btn">En savoir plus</a>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 - Tous droits réservés
+    </footer>
 
 </body>
 </html>
