@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Site d'Alka</title>
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
-<body>
-  <h1>Bienvenue 👋</h1>
-  <p>Mon premier site sur GitHub Pages.</p>
-</body>
-</html>
