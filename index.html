@@ -1,112 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Alka-Young</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alka</title>
 
-        header {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #f5c400;
-        }
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --dark: #0f172a;
+      --light: #f8fafc;
+    }
 
-        header h1 {
-            color: #f5c400;
-            margin: 0;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), #6366f1);
+      color: white;
+      padding: 2rem;
+    }
 
-        nav a:hover {
-            color: #f5c400;
-        }
+    header h1 {
+      font-size: 3rem;
+    }
 
-        main {
-            padding: 40px;
-            text-align: center;
-        }
+    header p {
+      max-width: 600px;
+      margin: 1rem 0 2rem;
+    }
 
-        .card {
-            background-color: #111;
-            border: 1px solid #f5c400;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-        }
+    .btn {
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .card h2 {
-            color: #f5c400;
-        }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #f5c400;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
 
-        .btn:hover {
-            background-color: #ffd84d;
-        }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
 
-        footer {
-            background-color: #111;
-            text-align: center;
-            padding: 15px;
-            border-top: 2px solid #f5c400;
-            font-size: 14px;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #e5e7eb;
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Alka-Young</h1>
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">À propos</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+  <!-- HERO -->
+  <header>
+    <h1>Site d'Alka.</h1>
+    <p>Un site web simple, rapide, en une seule page .</p>
+    <a href="#services" class="btn">Découvrir</a>
+  </header>
 
-    <main>
-        <div class="card">
-            <h2>Bienvenue</h2>
-            <p>
-                Vous êtes sur le site d'Alka-Young, compositeur.
-            </p>
-            <p>
-                Ecoutez ses oeuvres ici, obtenez des informations plus bas.
-            </p>
-            <a href="#" class="btn">En savoir plus</a>
-        </div>
-    </main>
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>🚀 Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Design moderne</h3>
+        <p>Interface claire.</p>
+      </div>
+      <div class="card">
+        <h3>Responsive</h3>
+        <p>Adapté mobile, tablette et ordinateur.</p>
+      </div>
+      <div class="card">
+        <h3>Rapide</h3>
+        <p>HTML + CSS optimisés, sans dépendances.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        © 2025 - Tous droits réservés
-    </footer>
+  <!-- À PROPOS -->
+  <section>
+    <h2>👋 À propos</h2>
+    <p>
+      Landing page.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>📬 Contact</h2>
+    <p>Email : contact@Alka.fr</p>
+  </section>
+
+  <footer>
+    © 2025 - Alka
+  </footer>
 
 </body>
 </html>
