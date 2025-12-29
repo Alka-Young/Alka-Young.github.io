@@ -1,160 +1,178 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alka-Young</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alka-Young</title>
 
-  <style>
-    :root {
-      --primary: #6366f1;
-      --bg: #020617;
-      --card: #0b1220;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2933;
-    }
+<style>
+:root {
+  --primary: #6366f1;
+  --bg: #020617;
+  --card: #0b1220;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2933;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, sans-serif;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(circle at top, #6366f1, #020617 70%);
-      padding: 2rem;
-    }
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #6366f1, #020617 70%);
+  padding: 2rem;
+}
 
-    header h1 {
-      font-size: 3rem;
-    }
+header h1 {
+  font-size: 3rem;
+}
 
-    header p {
-      margin: 1rem 0 2rem;
-      color: var(--muted);
-    }
+header p {
+  margin: 1rem 0 2rem;
+  color: var(--muted);
+}
 
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    h2 {
-      margin-bottom: 2rem;
-      font-size: 2rem;
-    }
+h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
 
-    .card {
-      background: linear-gradient(180deg, #0b1220, #0e1628);
-      padding: 2rem;
-      border-radius: 1rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+.card {
+  background: linear-gradient(180deg, #0b1220, #0e1628);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 30px 60px rgba(0,0,0,0.7),
-        0 0 25px rgba(99,102,241,0.25);
-    }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.7),
+    0 0 25px rgba(99,102,241,0.25);
+}
 
-    .card h3 {
-      margin-bottom: 0.5rem;
-    }
+.card h3 {
+  margin-bottom: 0.5rem;
+}
 
-    /* 🎧 AUDIO PLAYER */
-    .audio-player {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+/* 🎧 AUDIO PLAYER */
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-    .audio-player button {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.4);
-      color: white;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
+.audio-player button {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
 
-    .audio-player button:hover {
-      color: var(--primary);
-      border-color: var(--primary);
-    }
+.audio-player button:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
 
-    .progress {
-      flex: 1;
-      height: 4px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 999px;
-      overflow: hidden;
-    }
+.progress-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    .progress .bar {
-      width: 0%;
-      height: 100%;
-      background: var(--primary);
-    }
+.progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
+.progress .bar {
+  width: 0%;
+  height: 100%;
+  background: var(--primary);
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
+.time {
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-width: 50px;
+  text-align: right;
+}
 
-      section {
-        padding: 2rem 1rem;
-      }
+.volume {
+  width: 80px;
+}
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -166,87 +184,102 @@
 </header>
 
 <section id="services">
-  <h2>Écouter</h2>
+<h2>Écouter</h2>
+<div class="grid">
 
-  <div class="grid">
-
-    <div class="card">
-      <h3>Titre 1</h3>
-      <div class="audio-player" data-audio="audio/titre1.mp3">
-        <button>▶</button>
+  <div class="card">
+    <h3>Titre 1</h3>
+    <div class="audio-player" data-audio="audio/titre1.mp3">
+      <button>▶</button>
+      <div class="progress-container">
         <div class="progress"><div class="bar"></div></div>
+        <div class="time">0:00 / 0:00</div>
       </div>
+      <input type="range" min="0" max="1" step="0.01" value="1" class="volume">
     </div>
-
-    <div class="card">
-      <h3>Titre 2</h3>
-      <div class="audio-player" data-audio="audio/titre2.mp3">
-        <button>▶</button>
-        <div class="progress"><div class="bar"></div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Titre 3</h3>
-      <div class="audio-player" data-audio="audio/titre3.mp3">
-        <button>▶</button>
-        <div class="progress"><div class="bar"></div></div>
-      </div>
-    </div>
-
   </div>
+
+  <div class="card">
+    <h3>Titre 2</h3>
+    <div class="audio-player" data-audio="audio/titre2.mp3">
+      <button>▶</button>
+      <div class="progress-container">
+        <div class="progress"><div class="bar"></div></div>
+        <div class="time">0:00 / 0:00</div>
+      </div>
+      <input type="range" min="0" max="1" step="0.01" value="1" class="volume">
+    </div>
+  </div>
+
+</div>
 </section>
 
 <section>
-  <h2>À propos</h2>
-  <p class="muted">Landing page musicale sombre et immersive.</p>
+<h2>À propos</h2>
+<p class="muted">Landing page musicale sombre et immersive.</p>
 </section>
 
 <section>
-  <h2>Contact</h2>
-  <p class="muted">contact@alka.fr</p>
+<h2>Contact</h2>
+<p class="muted">contact@alka.fr</p>
 </section>
 
 <footer>
-  © 2025 – Alka
+© 2025 – Alka
 </footer>
 
 <script>
-  const players = document.querySelectorAll('.audio-player');
-  let currentAudio = null;
-  let currentButton = null;
+const players = document.querySelectorAll('.audio-player');
+let currentAudio = null;
+let currentButton = null;
 
-  players.forEach(player => {
-    const audio = new Audio(player.dataset.audio);
-    const button = player.querySelector('button');
-    const bar = player.querySelector('.bar');
+function formatTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
 
-    button.addEventListener('click', () => {
-      if (currentAudio && currentAudio !== audio) {
-        currentAudio.pause();
-        currentButton.textContent = '▶';
-      }
+players.forEach(player => {
+  const audio = new Audio(player.dataset.audio);
+  const button = player.querySelector('button');
+  const bar = player.querySelector('.bar');
+  const timeDisplay = player.querySelector('.time');
+  const volumeSlider = player.querySelector('.volume');
 
-      if (audio.paused) {
-        audio.play();
-        button.textContent = '❚❚';
-        currentAudio = audio;
-        currentButton = button;
-      } else {
-        audio.pause();
-        button.textContent = '▶';
-      }
-    });
+  audio.volume = volumeSlider.value;
 
-    audio.addEventListener('timeupdate', () => {
-      bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
-    });
-
-    audio.addEventListener('ended', () => {
+  button.addEventListener('click', () => {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentButton.textContent = '▶';
+    }
+    if (audio.paused) {
+      audio.play();
+      button.textContent = '❚❚';
+      currentAudio = audio;
+      currentButton = button;
+    } else {
+      audio.pause();
       button.textContent = '▶';
-      bar.style.width = '0%';
-    });
+    }
   });
+
+  audio.addEventListener('timeupdate', () => {
+    const progressPercent = (audio.currentTime / audio.duration) * 100;
+    bar.style.width = progressPercent + '%';
+    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+  });
+
+  audio.addEventListener('ended', () => {
+    button.textContent = '▶';
+    bar.style.width = '0%';
+    timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+  });
+
+  volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+  });
+});
 </script>
 
 </body>
