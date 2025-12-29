@@ -9,7 +9,6 @@
     :root {
       --primary: #6366f1;
       --bg: #020617;
-      --surface: #020617;
       --card: #0b1220;
       --text: #e5e7eb;
       --muted: #9ca3af;
@@ -43,11 +42,9 @@
 
     header h1 {
       font-size: 3rem;
-      letter-spacing: -1px;
     }
 
     header p {
-      max-width: 600px;
       margin: 1rem 0 2rem;
       color: var(--muted);
     }
@@ -59,12 +56,6 @@
       border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
     }
 
     section {
@@ -73,7 +64,7 @@
       margin: auto;
     }
 
-    section h2 {
+    h2 {
       margin-bottom: 2rem;
       font-size: 2rem;
     }
@@ -92,48 +83,64 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    
+
     .card:hover {
       transform: translateY(-4px);
       box-shadow:
         0 30px 60px rgba(0,0,0,0.7),
-        0 0 25px rgba(99, 102, 241, 0.25); /* glow violet */
+        0 0 25px rgba(99,102,241,0.25);
     }
-
-
-    .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-
-
 
     .card h3 {
       margin-bottom: 0.5rem;
     }
 
-    .card p {
-      color: var(--muted);
+    /* 🎧 AUDIO PLAYER */
+    .audio-player {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .audio-player button {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .audio-player button:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .progress {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress .bar {
+      width: 0%;
+      height: 100%;
+      background: var(--primary);
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background: #020617;
-      color: var(--muted);
       border-top: 1px solid var(--border);
+      color: var(--muted);
     }
 
-
-    audio {
-      width: 100%;
-      margin-top: 1rem;
-      accent-color: #6366f1;
-      filter: brightness(0.9);
-    }
-
-
-    
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
@@ -152,69 +159,95 @@
 
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Alka-Young</h1>
-    <p>Compositeur. Écouter. Contacter.</p>
-    <a href="#services" class="btn">Découvrir</a>
-  </header>
+<header>
+  <h1>Alka-Young</h1>
+  <p>Compositeur. Écouter. Contacter.</p>
+  <a href="#services" class="btn">Découvrir</a>
+</header>
 
-  <!-- ECOUTER -->
-  <section id="services">
-    <h2>Écouter</h2>
+<section id="services">
+  <h2>Écouter</h2>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Titre 1</h3>
-        <audio controls>
-          <source src="audio/titre1.mp3" type="audio/mpeg">
-          Ton navigateur ne supporte pas l’audio.
-        </audio>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Titre 1</h3>
+      <div class="audio-player" data-audio="audio/titre1.mp3">
+        <button>▶</button>
+        <div class="progress"><div class="bar"></div></div>
       </div>
-
-      <div class="card">
-        <h3>Titre 2</h3>
-        <audio controls>
-          <source src="audio/titre1.mp3" type="audio/mpeg">
-          Ton navigateur ne supporte pas l’audio.
-        </audio>
-      </div>
-
-      <div class="card">
-        <h3>Titre 3</h3>
-
-        <audio controls>
-          <source src="audio/titre1.mp3" type="audio/mpeg">
-          Ton navigateur ne supporte pas l’audio.
-        </audio>
-      </div>
-
-      <div class="card">
-        <h4>Titre 4</h4>
-        <p>Design minimal, focus sur la musique.</p>
-      </div>
-
-      
     </div>
-  </section>
 
-  <!-- À PROPOS -->
-  <section>
-    <h2>À propos</h2>
-    <p class="muted">
-      Landing page musicale, style sombre et immersif.
-    </p>
-  </section>
+    <div class="card">
+      <h3>Titre 2</h3>
+      <div class="audio-player" data-audio="audio/titre2.mp3">
+        <button>▶</button>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </div>
 
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <p class="muted">Email : contact@alka.fr</p>
-  </section>
+    <div class="card">
+      <h3>Titre 3</h3>
+      <div class="audio-player" data-audio="audio/titre3.mp3">
+        <button>▶</button>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </div>
 
-  <footer>
-    © 2025 – Alka
-  </footer>
+  </div>
+</section>
+
+<section>
+  <h2>À propos</h2>
+  <p class="muted">Landing page musicale sombre et immersive.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p class="muted">contact@alka.fr</p>
+</section>
+
+<footer>
+  © 2025 – Alka
+</footer>
+
+<script>
+  const players = document.querySelectorAll('.audio-player');
+  let currentAudio = null;
+  let currentButton = null;
+
+  players.forEach(player => {
+    const audio = new Audio(player.dataset.audio);
+    const button = player.querySelector('button');
+    const bar = player.querySelector('.bar');
+
+    button.addEventListener('click', () => {
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentButton.textContent = '▶';
+      }
+
+      if (audio.paused) {
+        audio.play();
+        button.textContent = '❚❚';
+        currentAudio = audio;
+        currentButton = button;
+      } else {
+        audio.pause();
+        button.textContent = '▶';
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+    });
+
+    audio.addEventListener('ended', () => {
+      button.textContent = '▶';
+      bar.style.width = '0%';
+    });
+  });
+</script>
 
 </body>
 </html>
