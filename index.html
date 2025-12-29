@@ -23,6 +23,7 @@
       background: var(--light);
       color: var(--dark);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     header {
@@ -67,12 +68,6 @@
       gap: 2rem;
     }
 
-    @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }  
-
     .card {
       background: white;
       padding: 2rem;
@@ -80,10 +75,31 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
       background: #e5e7eb;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        max-width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -93,25 +109,34 @@
   <!-- HERO -->
   <header>
     <h1>Alka-Young</h1>
-    <p>Compositeur. Ecouter. Contacter.</p>
+    <p>Compositeur. Écouter. Contacter.</p>
     <a href="#services" class="btn">Découvrir</a>
   </header>
 
   <!-- SERVICES -->
-  <section id="Travaux récents">
+  <section id="services">
     <h2>🚀 Services</h2>
+
     <div class="grid">
       <div class="card">
-        <h3>Titre1</h3>
+        <h3>Titre 1</h3>
         <p>Interface claire.</p>
-        <iframe src="https://www.archive-host.com/media/players/jplayer/index.php?data=aHR0cHM6Ly9zZC0yLmFyY2hpdmUtaG9zdC5jb20vbWVtYnJlcy91cC8yMDA3NjkxMTk0NDMwMDk1MzUvY2F2ZS5tcDN8MHwwfHx8fDA=&tags=1" scrolling="false" allowtransparency="true" frameborder="0" width="435" height="90">www.archive-host.com</iframe>
+
+        <iframe
+          src="https://www.archive-host.com/media/players/jplayer/index.php?data=aHR0cHM6Ly9zZC0yLmFyY2hpdmUtaG9zdC5jb20vbWVtYnJlcy91cC8yMDA3NjkxMTk0NDMwMDk1MzUvY2F2ZS5tcDN8MHwwfHx8fDA=&tags=1"
+          scrolling="no"
+          frameborder="0"
+          height="90">
+        </iframe>
       </div>
+
       <div class="card">
-        <h3>Titre2</h3>
+        <h3>Titre 2</h3>
         <p>Adapté mobile, tablette et ordinateur.</p>
       </div>
+
       <div class="card">
-        <h3>Titre3</h3>
+        <h3>Titre 3</h3>
         <p>HTML + CSS optimisés, sans dépendances.</p>
       </div>
     </div>
@@ -128,11 +153,11 @@
   <!-- CONTACT -->
   <section>
     <h2>📬 Contact</h2>
-    <p>Email : contact@Alka.fr</p>
+    <p>Email : contact@alka.fr</p>
   </section>
 
   <footer>
-    © 2025 - Alka
+    © 2025 – Alka
   </footer>
 
 </body>
