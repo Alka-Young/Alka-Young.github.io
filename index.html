@@ -124,6 +124,16 @@
       border-top: 1px solid var(--border);
     }
 
+
+    audio {
+      width: 100%;
+      margin-top: 1rem;
+      accent-color: #6366f1;
+      filter: brightness(0.9);
+    }
+
+
+    
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
@@ -162,6 +172,11 @@
       <div class="card">
         <h3>Titre 2</h3>
         <p>Adapté mobile, tablette et ordinateur.</p>
+        
+        <audio controls>
+          <source src="audio/titre1.mp3" type="audio/mpeg">
+          Ton navigateur ne supporte pas l’audio.
+        </audio>
       </div>
 
       <div class="card">
