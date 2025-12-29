@@ -7,9 +7,13 @@
 
   <style>
     :root {
-      --primary: #4f46e5;
-      --dark: #0f172a;
-      --light: #f8fafc;
+      --primary: #6366f1;
+      --bg: #020617;
+      --surface: #020617;
+      --card: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #020617;
     }
 
     * {
@@ -20,8 +24,8 @@
     }
 
     body {
-      background: var(--light);
-      color: var(--dark);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -33,33 +37,45 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, var(--primary), #6366f1);
-      color: white;
+      background: radial-gradient(circle at top, #6366f1, #020617 70%);
       padding: 2rem;
     }
 
     header h1 {
       font-size: 3rem;
+      letter-spacing: -1px;
     }
 
     header p {
       max-width: 600px;
       margin: 1rem 0 2rem;
+      color: var(--muted);
     }
 
     .btn {
-      background: white;
-      color: var(--primary);
+      background: var(--primary);
+      color: white;
       padding: 0.75rem 1.5rem;
       border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     section {
       padding: 4rem 2rem;
       max-width: 1000px;
       margin: auto;
+    }
+
+    section h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
 
     .grid {
@@ -69,22 +85,27 @@
     }
 
     .card {
-      background: white;
+      background: linear-gradient(180deg, #020617, #020617);
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    iframe {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 0.5rem;
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background: #e5e7eb;
+      background: #020617;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
     }
 
     @media (max-width: 600px) {
@@ -93,7 +114,6 @@
       }
 
       section {
-        max-width: 100%;
         padding: 2rem 1rem;
       }
 
@@ -113,16 +133,16 @@
     <a href="#services" class="btn">Découvrir</a>
   </header>
 
-  <!-- SERVICES -->
+  <!-- ECOUTER -->
   <section id="services">
-    <h2>Ecouter</h2>
+    <h2>Écouter</h2>
 
     <div class="grid">
       <div class="card">
         <h3>Titre 1</h3>
-        <p>Interface claire.</p>
+        <p>Ambiance sombre et cinématique.</p>
       </div>
-        
+
       <div class="card">
         <h3>Titre 2</h3>
         <p>Adapté mobile, tablette et ordinateur.</p>
@@ -130,7 +150,7 @@
 
       <div class="card">
         <h3>Titre 3</h3>
-        <p>HTML + CSS optimisés, sans dépendances.</p>
+        <p>Design minimal, focus sur la musique.</p>
       </div>
     </div>
   </section>
@@ -138,15 +158,15 @@
   <!-- À PROPOS -->
   <section>
     <h2>À propos</h2>
-    <p>
-      Landing page.
+    <p class="muted">
+      Landing page musicale, style sombre et immersif.
     </p>
   </section>
 
   <!-- CONTACT -->
   <section>
     <h2>Contact</h2>
-    <p>Email : contact@alka.fr</p>
+    <p class="muted">Email : contact@alka.fr</p>
   </section>
 
   <footer>
