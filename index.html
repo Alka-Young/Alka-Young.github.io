@@ -259,7 +259,7 @@ players.forEach(player => {
   button.addEventListener('click', () => {
     if (currentAudio && currentAudio !== audio) {
       currentAudio.pause();
-      currentButton.textContent = '▶';
+      currentButton.textContent = ' ▶';
     }
     if (audio.paused) {
       audio.play();
@@ -268,7 +268,7 @@ players.forEach(player => {
       currentButton = button;
     } else {
       audio.pause();
-      button.textContent = '▶';
+      button.textContent = ' ▶';
     }
   });
 
